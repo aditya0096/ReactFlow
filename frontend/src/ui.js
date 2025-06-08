@@ -13,7 +13,15 @@ import { TextNode } from "./nodes/textNode";
 
 import "reactflow/dist/style.css";
 import BaseNode from "./nodes/baseNode";
-import ImageNode from "./nodes/imageNode";
+import { DataProcessingNode } from './nodes/dataProcessingNode';
+import { APINode } from './nodes/apiNode';
+import { FilterNode } from './nodes/filterNode';
+import { MergeNode } from './nodes/mergeNode';
+import { VisualizationNode } from './nodes/visualizationNode';
+import { TransformNode } from './nodes/transformNode';
+import { ConditionNode } from './nodes/conditionNode';
+import { DatabaseNode } from './nodes/databaseNode';
+import { WebhookNode } from './nodes/webhookNode';
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -23,7 +31,15 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
-  image: ImageNode,
+  transform: TransformNode,
+  condition: ConditionNode,
+  database: DatabaseNode,
+  dataProcessing: DataProcessingNode,
+  filterNode: FilterNode,
+  merge: MergeNode,
+  visualization: VisualizationNode,
+  webhook: WebhookNode,
+  api: APINode,
 };
 
 const selector = (state) => ({

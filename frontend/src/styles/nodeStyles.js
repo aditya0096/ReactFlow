@@ -1,126 +1,82 @@
-// Node styles
 export const nodeStyles = {
-  base: {
+  // Node type colors - keeping only essential colors
+  colors: {
+    input: '#2E7D32',      // Deep Green
+    output: '#1565C0',     // Deep Blue
+    llm: '#6A1B9A',        // Deep Purple
+    text: '#E65100',       // Deep Orange
+    transform: '#00838F',  // Deep Teal
+    condition: '#BF360C',  // Deep Red-Orange
+    database: '#37474F'    // Blue Grey
+  },
+  
+  // Node base styles - adjusted for better sizing
+  baseNode: {
     padding: '12px',
-    borderRadius: '8px',
+    borderRadius: '6px',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    border: '2px solid',
+    width: '200px', // Fixed width
     background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
-    fontFamily: 'Inter, system-ui, sans-serif',
-    transition: 'all 0.2s ease-in-out',
-    '&:hover': {
-      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-      borderColor: '#cbd5e1'
-    }
+    // transition: 'all 0.1s ease-in-out',
+    // '&:hover': {
+    //   boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
+    // }
   },
   
-  header: {
-    fontSize: '14px',
-    fontWeight: '600',
-    color: '#1e293b',
-    marginBottom: '8px',
-    paddingBottom: '8px',
-    borderBottom: '1px solid #e2e8f0'
-  },
-  
-  input: {
-    width: '100%',
-    padding: '8px 12px',
-    borderRadius: '6px',
-    border: '1px solid #e2e8f0',
-    fontSize: '14px',
-    color: '#1e293b',
-    background: '#f8fafc',
-    transition: 'all 0.2s ease-in-out',
-    '&:focus': {
-      outline: 'none',
-      borderColor: '#3b82f6',
-      boxShadow: '0 0 0 2px rgba(59, 130, 246, 0.1)'
-    }
-  },
-  
-  select: {
-    width: '100%',
-    padding: '8px 12px',
-    borderRadius: '6px',
-    border: '1px solid #e2e8f0',
-    fontSize: '14px',
-    color: '#1e293b',
-    background: '#f8fafc',
-    cursor: 'pointer',
-    transition: 'all 0.2s ease-in-out',
-    '&:focus': {
-      outline: 'none',
-      borderColor: '#3b82f6',
-      boxShadow: '0 0 0 2px rgba(59, 130, 246, 0.1)'
-    }
-  },
-  
-  textarea: {
-    width: '100%',
-    padding: '8px 12px',
-    borderRadius: '6px',
-    border: '1px solid #e2e8f0',
-    fontSize: '14px',
-    color: '#1e293b',
-    background: '#f8fafc',
-    resize: 'vertical',
-    minHeight: '100px',
-    fontFamily: 'monospace',
-    transition: 'all 0.2s ease-in-out',
-    '&:focus': {
-      outline: 'none',
-      borderColor: '#3b82f6',
-      boxShadow: '0 0 0 2px rgba(59, 130, 246, 0.1)'
-    }
-  },
-  
-  label: {
-    display: 'block',
-    fontSize: '12px',
-    fontWeight: '500',
-    color: '#64748b',
-    marginBottom: '4px'
-  },
-  
+  // Handle styles - smaller handles
   handle: {
-    width: '12px',
-    height: '12px',
-    background: '#3b82f6',
-    border: '2px solid #ffffff',
-    borderRadius: '50%',
-    transition: 'all 0.2s ease-in-out',
-    '&:hover': {
-      background: '#2563eb',
-      transform: 'scale(1.1)'
-    }
+    width: '8px',
+    height: '8px',
+    border: '2px solid #fff',
+    boxShadow: '0 0 2px rgba(0,0,0,0.2)'
   },
   
-  // Node type specific colors
-  nodeTypeColors: {
-    Text: '#3b82f6',
-    Code: '#8b5cf6',
-    Transform: '#10b981',
-    Conditional: '#f59e0b',
-    Template: '#ef4444',
-    Batch: '#6366f1',
-    Input: '#14b8a6',
-    Output: '#f43f5e',
-    LLM: '#ec4899'
+  // Input styles - more compact
+  input: {
+    width: 'calc(100% - 16px)', // Account for padding
+    padding: '6px',
+    borderRadius: '4px',
+    border: '1px solid #e0e0e0',
+    marginBottom: '6px',
+    fontSize: '12px',
+    backgroundColor: '#fafafa',
+    boxSizing: 'border-box'
+  },
+  
+  // Select styles - more compact
+  select: {
+    width: 'calc(100% - 16px)', // Account for padding
+    padding: '6px',
+    borderRadius: '4px',
+    border: '1px solid #e0e0e0',
+    marginBottom: '6px',
+    fontSize: '12px',
+    backgroundColor: '#fafafa',
+    boxSizing: 'border-box'
+  },
+
+  // Label styles
+  label: {
+    fontSize: '11px',
+    color: '#666',
+    marginBottom: '2px',
+    display: 'block',
+    paddingLeft: '2px'
+  },
+
+  // Textarea styles - more compact
+  textarea: {
+    width: 'calc(100% - 16px)', // Account for padding
+    padding: '6px',
+    borderRadius: '4px',
+    border: '1px solid #e0e0e0',
+    marginBottom: '6px',
+    fontSize: '12px',
+    backgroundColor: '#fafafa',
+    boxSizing: 'border-box',
+    resize: 'vertical',
+    minHeight: '60px',
+    maxHeight: '100px'
   }
-};
-
-// Helper function to get node type color
-export const getNodeTypeColor = (type) => {
-  return nodeStyles.nodeTypeColors[type] || '#64748b';
-};
-
-// Helper function to apply styles to a node
-export const applyNodeStyles = (type, customStyles = {}) => {
-  const typeColor = getNodeTypeColor(type);
-  return {
-    ...nodeStyles.base,
-    borderColor: typeColor,
-    ...customStyles
-  };
 }; 

@@ -37,7 +37,8 @@ export const SubmitButton = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <button
-        onClick={handleSubmit}
+        id="submit-button"
+        type="submit"
         disabled={isLoading}
         style={{
           padding: '10px 20px',
@@ -50,6 +51,7 @@ export const SubmitButton = () => {
           opacity: isLoading ? 0.7 : 1,
           transition: 'all 0.2s ease-in-out'
         }}
+        onClick={handleSubmit}
       >
         {isLoading ? 'Validating...' : 'Validate Pipeline'}
       </button>

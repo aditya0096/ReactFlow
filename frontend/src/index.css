@@ -5,9 +5,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.react-flow__node {
+  transition: all 0.2s ease-in-out;
+}
+
+.react-flow__node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.react-flow__handle {
+  transition: all 0.2s ease-in-out;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.2);
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+  transition: all 0.2s ease-in-out;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 3;
+}
+
+.react-flow__controls {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  border: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+  padding: 8px !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #f1f5f9 !important;
+}
+
+.react-flow__minimap {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
